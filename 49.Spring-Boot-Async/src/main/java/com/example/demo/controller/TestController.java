@@ -26,15 +26,15 @@ public class TestController {
         long start = System.currentTimeMillis();
         logger.info("异步方法开始");
 
-        Future<String> stringFuture = testService.asyncMethod();
-        String result = stringFuture.get(60, TimeUnit.SECONDS);
-        logger.info("异步方法返回值：{}", result);
+        testService.asyncMethod();
+//        String result = stringFuture.get(60, TimeUnit.SECONDS);
+//        logger.info("异步方法返回值：{}", result);
 
         logger.info("异步方法结束");
 
         long end = System.currentTimeMillis();
         logger.info("总耗时：{} ms", end - start);
-        return stringFuture.get();
+        return "hello async";
     }
 
     @GetMapping("sync")

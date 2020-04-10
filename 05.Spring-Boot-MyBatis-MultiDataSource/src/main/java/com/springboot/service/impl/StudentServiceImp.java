@@ -27,4 +27,9 @@ public class StudentServiceImp implements StudentService{
 		return this.mysqlStudentMapper.getAllStudents();
 	}
 
+	@Override
+	public int insertUser() {
+		return mysqlStudentMapper.insertUser();
+	}
+
 }

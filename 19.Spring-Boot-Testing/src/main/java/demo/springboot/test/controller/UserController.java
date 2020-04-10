@@ -1,6 +1,8 @@
 package demo.springboot.test.controller;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +23,16 @@ public class UserController {
 		return this.userService.findByName(userName);
 	}
 
+
 	@PostMapping("user/save")
 	public void saveUser(@RequestBody User user) {
 		this.userService.saveUser(user);
 	}
+
+	@Test
+	@Transactional
+	public void saveUser2(@RequestBody User user) {
+		this.userService.saveUser(user);
+	}
+
 }

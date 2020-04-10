@@ -17,12 +17,12 @@ public class TestService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Async("asyncThreadPoolTaskExecutor")
-    // @Async
-    public Future<String> asyncMethod() {
+//    @Async("asyncThreadPoolTaskExecutor")
+     @Async
+    public void asyncMethod() {
         sleep();
         logger.info("异步方法内部线程名称：{}", Thread.currentThread().getName());
-        return new AsyncResult<>("hello async");
+//        return new AsyncResult<>("hello async");
     }
 
     public void syncMethod() {

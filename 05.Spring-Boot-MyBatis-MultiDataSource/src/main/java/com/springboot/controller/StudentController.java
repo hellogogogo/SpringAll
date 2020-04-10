@@ -14,7 +14,12 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService studentService;
-	
+
+	@RequestMapping("/hello")
+	public String hello(){
+		return "hello2222";
+	}
+
 	@RequestMapping("querystudentsfromoracle")
 	public List<Map<String, Object>> queryStudentsFromOracle(){
 		return this.studentService.getAllStudentsFromOralce();
