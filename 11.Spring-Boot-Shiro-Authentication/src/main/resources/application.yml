@@ -5,11 +5,16 @@ spring:
   datasource:
     druid:
       # 数据库访问配置, 使用druid数据源 
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      url: jdbc:oracle:thin:@localhost:1521:ORCL
+#      username: test
+#      password: 123456
       type: com.alibaba.druid.pool.DruidDataSource
-      driver-class-name: oracle.jdbc.driver.OracleDriver
-      url: jdbc:oracle:thin:@localhost:1521:ORCL
-      username: test
-      password: 123456   
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://203.195.246.90:3306/test?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+      username: Ly
+      password: Ly1234!
       # 连接池配置
       initial-size: 5
       min-idle: 5
